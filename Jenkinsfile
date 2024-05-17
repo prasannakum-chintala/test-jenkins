@@ -1,6 +1,3 @@
-@Library('snc-security-pipelines@prod') _
-import com.snc.security.container.ContainerImage
-
 pipeline {
   agent any
   environment {
@@ -21,6 +18,9 @@ pipeline {
                   echo "password is ${password}"
                } 
                echo "version from parameter is  ${params.version}"
+               withCredentials([string(credentialsId: 'anchorkey', variable: 'mykey')]) {
+                 echo "my anchore key is ${mykey}"
+               }
                
              
            }
