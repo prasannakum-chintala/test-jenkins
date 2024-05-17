@@ -10,6 +10,7 @@ pipeline {
                echo "Branch name for the current VERSION is ${MY_VERSION}"
                withCredentials([usernamePassword(credentialsId: 'mygithubcred', passwordVariable: 'password', usernameVariable: 'username')]){
                   echo "user name is ${username}"
+                  echo "password is ${password}"
                }  
              
            }
