@@ -1,3 +1,6 @@
+@Library('snc-security-pipelines@prod') _
+import com.snc.security.container.ContainerImage
+
 pipeline {
   agent any
   environment {
