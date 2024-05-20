@@ -12,7 +12,7 @@ pipeline {
       stage("build") {
            steps {
                echo 'Building'
-               echo "Version from environment is ${MY_VERSION}"
+               echo "Version from environment is ${MY_VERSION_NOT}"
                withCredentials([usernamePassword(credentialsId: 'mygithubcred', passwordVariable: 'password', usernameVariable: 'username')]){
                   echo "user name is ${username}"
                   echo "password is ${password}"
